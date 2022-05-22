@@ -1,13 +1,23 @@
-let saludo= () => {
-    console.log("Hola a todos");
+class Cuadrado{
+    constructor(lado){
+        this.lado = lado
+    }
+    area(){
+        return this.lado*2;
+    }
+    perimetro(){
+        return this.lado*4;
+    }
 }
 
 
-let onmouseoverTest =() =>{
-    console.log("Disparo onmouseover");
+let areaCuadrado = () =>{
+    let lado = parseInt( document.getElementById('ladoCuadrado').value);
+    let cuadrado = new Cuadrado(lado);
+    document.getElementById('resultadoCuadrado').innerHTML = `<strong>El area del cuadrado es ${cuadrado.area()}</strong>`;
 }
-
-
-let onmouseoutTest =() =>{
-    console.log("Disparo onmouseout");
+let perimetroCuadrado = () =>{
+    let lado = parseInt( document.getElementById('ladoCuadrado').value);
+    let cuadrado = new Cuadrado(lado);
+    document.getElementById('resultadoCuadrado').innerHTML = `<strong>El perímetro del cuadrado es ${cuadrado.perimetro()}</strong>`;
 }
