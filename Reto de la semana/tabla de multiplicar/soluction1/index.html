@@ -17,24 +17,20 @@
 </head>
     <body>
         <div class="container">
+          <h1>Solucción 1</h1>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Tabla de multiplicar</label>
-            <input type="email" class="form-control" id="tablaMultiplicar" placeholder="Tabla de multiplicar">
-            <label for="exampleFormControlInput1" class="form-label">Inicio</label>
-            <input type="email" class="form-control" id="inicioTabla" placeholder="Inicio">
-            <label for="exampleFormControlInput1" class="form-label">Fin</label>
-            <input type="email" class="form-control" id="finTabla" placeholder="Fin">
+            <label for="tablaMultiplicar" class="form-label">Tabla de multiplicar</label>
+            <input type="number" class="form-control" id="tablaMultiplicar" placeholder="Tabla de multiplicar">
+            <label for="inicioTabla" class="form-label">Inicio</label>
+            <input type="number" class="form-control" id="inicioTabla" placeholder="Inicio">
+            <label for="finTabla" class="form-label">Fin</label>
+            <input type="number" class="form-control" id="finTabla" placeholder="Fin">
+            <button type="button" class="btn btn-primary" onclick="calcularTablas()">Mostrar tabla</button>
           </div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col" colspan="3">Tabla del 1</th>
-                  </tr>
-                </thead>
+            <table >
                 <tbody>
                 </tbody>
-              </table>            
-            <button type="button" class="btn btn-primary" onclick="calcularTablas()">Mostrar tabla</button>
+            </table>            
         </div>
         <script type="text/javascript" src="./ejemplo.js"></script>
     </body>
