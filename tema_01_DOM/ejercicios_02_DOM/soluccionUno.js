@@ -2,6 +2,7 @@ const actionOne = () =>
     document.getElementById('divOne').style.background = '#870000';
 
 const actionTwo = () => {
+    console.log('actionTwo');
     document.getElementById('divTwo').style.width = '600px';
 }
 
@@ -22,5 +23,7 @@ const actionThree = () => {
     document.getElementById('divThree').style.borderStyle = 'dotted';
     document.getElementById('divThree').style.borderColor = '#870000';
 
+    // # id
+    // . class
 
 }
