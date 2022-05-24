@@ -1,7 +1,8 @@
 let tablas = () => {
-    let tablas = 20;
+    let tablas = 10;
     for (let tabla = 0; tabla < tablas; tabla++) {
         let createTable = document.createElement("table");
+        createTable.className='table';
         document.getElementsByTagName("body")[0].appendChild(createTable);
         let lastTable = document.getElementsByTagName("table").length;
         let createHead = document.createElement("head");
@@ -27,4 +28,4 @@ let tablas = () => {
         }
     }
 }
-tablas();
+ tablas();
