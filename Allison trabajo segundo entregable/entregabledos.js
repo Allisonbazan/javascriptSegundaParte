@@ -1,50 +1,29 @@
-//const botonSimple = document.getElementById('botonSimple');
-//botonSimple.addEventListener('click', () =>{
-//    console.log('Evento nuevo desde JS');
-//    alert('Evento nuevo desde JS');
-//})
-
-//const saludo = () => {
-  //  console.log('Hola a todos desde la función Saludo');
-    // Modal 
- //   alert('Hola a todos');
-//}
-
-//const onmouseoverTest =() =>{
- //  console.log('Disparo onmouseover');
-//}
-
-
-//const onmouseoutTest =() =>{
-  //  console.log('Disparo onmouseout');
-//}
-
-
 alumnos = [
     {
-        name: 'Allison',
-        age:5
+        nombreusuario: 'Allison',
+        edadmiau:5
     },
     {
-        name: 'Lucy',
-        age:56
+        nombreusuario: 'Lucy',
+        edadmiau:56
     },
 ]
 
-let mostraralumnos = () =>{
-alumnos.forEach((element,index) => {
+let mostraralumnos = (alumnosrecibidos) =>{
+document.getelementbytagname("tbody")[0].innerHTML = '';
+    alumnosrecibidos.forEach((element,index) => {
+    //nueva linea en la tabla
     let texto1 =document.createElement ("tr");
-    texto1.innerHTML= 
+    texto1.innerHTML = 
     //copiar una linea de la tabla
-    <tr>
-      <th scope="row">${index+1}</th>
-      <td>${element.name}</td>
-      <td>{element.age}</td>
-      <td>
-        <button type="submit" class="btn btn-primary mb-3" onclick="editarRegistro()">Editar</button>
-      <button type="submit" class="btn btn-primary mb-3" onclick="eliminarRegistro()">Actualizar</button>
-      </td>"
-    </tr> ;
+    <td scope="row">${index+1}</td>
+    <td>${element.nombreusuario}</td>
+    <td>${element.edadmiau}</td>
+    <td>
+      <button type="submit" class="btn btn-primary mb-3" onclick="editarRegistro(${index})">Editar</button>
+    <button type="submit" class="btn btn-primary mb-3" onclick="eliminarRegistro( ${index} )">Eliminar</button>
+    </td> ; 
+       
     document.getelementbytagname("tbody")[0].appendchild(texto1);
     
 });
@@ -57,5 +36,29 @@ let eliminarRegistro = () =>{
 }
 
 let editarRegistro = () =>{
-    console.log('Editar');
+   let posicionjava =document.getElementById('posicion').value;
+   let nombrejava =document.getElementById('nombreusuario').value;
+   let edadjava =document.getElementById('edadmiau').value;
 }
+//se utiliza para actualizar la linea
+let actualizarRegistro = () =>{
+    let posicionjava =document.getElementById('posicion').value;
+    let nombrejava =document.getElementById('nombreusuario').value;
+    let edadjava =document.getElementById('edadmiau').value;
+
+    alumnos[posicion] = {
+
+
+    }
+ }
+
+ let agregarregistro= () =>{
+const nuevoalumno ={
+    nombre: document.getElementById('nombreusuario').value,
+    edad: document.getElementById('edadmiau ').value,
+}
+
+document.getElementById('nombreusuario').value = ' ';
+document.getElementById('edadmiau').value = ' ';
+alumnos.push (nuevoalumno);
+mostraralumnos(alumnos); }
