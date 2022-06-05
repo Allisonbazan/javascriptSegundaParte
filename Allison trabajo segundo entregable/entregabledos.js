@@ -14,32 +14,42 @@ document.getelementbytagname("tbody")[0].innerHTML = '';
     alumnosrecibidos.forEach((element,index) => {
     //nueva linea en la tabla
     let texto1 =document.createElement ("tr");
-    texto1.innerHTML = 
-    //copiar una linea de la tabla
-    <td scope="row">${index+1}</td>
+    texto1.innerHTML = ´    
+    
+    <td scope="row">${ index + 1 } </td> 
     <td>${element.nombreusuario}</td>
     <td>${element.edadmiau}</td>
     <td>
-      <button type="submit" class="btn btn-primary mb-3" onclick="editarRegistro(${index})">Editar</button>
-    <button type="submit" class="btn btn-primary mb-3" onclick="eliminarRegistro( ${index} )">Eliminar</button>
-    </td> ; 
-       
-    document.getelementbytagname("tbody")[0].appendchild(texto1);
+      <button type="submit" class="btn btn-primary mb-3" onclick="editarRegistro()">Editar</button>
+        <button type="submit" class="btn btn-primary mb-3" onclick="eliminarRegistro()">Eliminar</button>
+    </td>    ; ´
+
+       document.getElementbyTagname("tbody")[0].appendchild(texto1);
     
 });
 
-
 }
 
-let eliminarRegistro = () =>{
-    console.log('Eliminar');
-}
+let eliminarRegistro = (variablecualquiera) =>{
+    alumnos = alumnos.filter((alumno,index)=> index !== variablecualquiera);
+    mostraralumnos();
+}//me peude explicar el metodo filter?
 
 let editarRegistro = () =>{
    let posicionjava =document.getElementById('posicion').value;
    let nombrejava =document.getElementById('nombreusuario').value;
    let edadjava =document.getElementById('edadmiau').value;
 }
+//rellenar formulario
+let rellenarformulario = (variablecualquiera) => {
+    
+    document.getElementById('posicion').value =variablecualquiera;
+    document.getElementById('nombreusuario').value = alumnos [variablecualquiera].nombreusuario;
+    document.getElementById('edadmiau').value = alumnos [variablecualquiera].edadmiau;
+
+}
+
+
 //se utiliza para actualizar la linea
 let actualizarRegistro = () =>{
     let posicionjava =document.getElementById('posicion').value;
@@ -47,18 +57,24 @@ let actualizarRegistro = () =>{
     let edadjava =document.getElementById('edadmiau').value;
 
     alumnos[posicion] = {
-
+        nombrejava : nombreusuario
+        edadjava: edadmiau
 
     }
+    document.getElementById('posicion').value = ' ';
+    document.getElementById('nombreusuario').value = ' ';
+    document.getElementById('edadmiau').value = ' ';
+    mostraralumnos(alumnos);
  }
 
  let agregarregistro= () =>{
-const nuevoalumno ={
-    nombre: document.getElementById('nombreusuario').value,
-    edad: document.getElementById('edadmiau ').value,
-}
+
+    let alumnos= []
+    let nombre= document.getElementById('nombreusuario').value
+    let edad= document.getElementById("edadmiau ").value
+
 
 document.getElementById('nombreusuario').value = ' ';
 document.getElementById('edadmiau').value = ' ';
-alumnos.push (nuevoalumno);
-mostraralumnos(alumnos); }
+alumnos.push (nuevoalumno); }
+mostraralumnos(alumnos);

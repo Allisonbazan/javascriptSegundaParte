@@ -29,18 +29,22 @@
 <form class="row g-3">
     <div class="col-auto">
       <label for="nombreusuario" class="visually-hidden">Nombres</label>
-      <input type="text" class="form-control" id="nombreusuario"  placeholder="Nombres">
-      <input type="text"   id="posicion" >
-    </div>
+      <input type="text" class="form-control" id="nombreusuario"  placeholder="Nombres"></div>
+     
+    
     <div class="col-auto">
       <label for="inputPassword2" class="visually-hidden">Password</label>
       <input type="number" class="form-control" id="edadmiau" placeholder="Edad">
     </div>
+
     <div class="col-auto"> 
       <!--aqui estoy agregando onclick para linkearlo con java-->
-      <button type="submit" class="btn btn-primary mb-3" onclick="agregarregistro">Agregar</button>
-      <button type="submit" class="btn btn-primary mb-3" onclick="actualizarRegistro">Actualizar</button>
+      <button type="submit" class="btn btn-primary mb-3" onclick="agregarregistro()">Agregar</button>
+      <button type="submit" class="btn btn-primary mb-3" onclick="actualizarRegistro()">Actualizar</button>
     </div>
+    <div>
+      <input type="text"   id="posicion" ></div>
+    
   </form>
 
 <!--TABLAA-->
